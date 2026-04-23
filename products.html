@@ -4,40 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products — Mom'z Factory</title>
-  <meta name="description" content="Browse our full range of handmade natural soaps and household products. 100g bars at ₹129.">
+  <meta name="description" content="Browse all Mom'z Factory handmade natural soaps. 100g bars, ₹129 each. Order on WhatsApp.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div id="navbar"></div>
 
+  <!-- Page Hero -->
   <div class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">Our Products</h1>
-      <p class="page-hero__sub">100g Handmade · All Natural · ₹129 each · Order via WhatsApp</p>
-    </div>
+    <h1 class="page-hero__title" data-animate>Our Products</h1>
+    <p class="page-hero__subtitle" data-animate data-animate-delay="100">
+      100g Handmade · All Natural · ₹129 each · Order via WhatsApp
+    </p>
   </div>
 
-  <div class="filter-bar">
+  <!-- Products -->
+  <section class="products-section">
     <div class="container">
-      <div class="filter-tabs">
+
+      <!-- Filter tabs -->
+      <div class="filter-bar" data-animate>
         <button class="filter-tab active" data-filter="all">All Products</button>
         <button class="filter-tab" data-filter="soap">Soaps</button>
         <button class="filter-tab" data-filter="household">Household</button>
       </div>
-    </div>
-  </div>
 
-  <section class="products-section">
-    <div class="container">
+      <!-- Grid -->
       <div class="products-grid" id="productsGrid">
-        <p style="text-align:center;padding:60px;color:var(--text-muted);">Loading products…</p>
+        <!-- Rendered by products.js -->
       </div>
+
     </div>
   </section>
 
   <div id="footer"></div>
+
   <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/products.js"></script>
 </body>
 </html>
