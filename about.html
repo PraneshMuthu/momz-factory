@@ -4,76 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — Mom'z Factory</title>
-  <meta name="description" content="Learn about Mom'z Factory — handmade natural soaps crafted in Coimbatore with love.">
+  <meta name="description" content="Learn about Mom'z Factory — handmade natural soaps crafted in Coimbatore.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div id="navbar"></div>
 
+  <!-- Page Hero -->
   <div class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">About Mom'z Factory</h1>
-      <p class="page-hero__sub">Our story, our promise, our passion for natural living.</p>
-    </div>
+    <h1 class="page-hero__title" data-animate>About Mom'z Factory</h1>
+    <p class="page-hero__subtitle" data-animate data-animate-delay="100">Our story, our promise, our passion for natural living.</p>
   </div>
 
-  <!-- Brand story -->
+  <!-- Brand Story -->
   <section class="section">
-    <div class="container" style="max-width:720px;">
-      <h2 class="section-title" style="text-align:left;">Our Story</h2>
-      <p style="color:var(--text-body);font-size:1rem;line-height:1.9;margin-top:16px;">
-        Mom'z Factory was born out of a simple belief — that what you put on your skin matters as much as what you put in your body.
-        We set out to create handmade soaps that are honest, effective, and kind to the earth.
-      </p>
-      <p style="color:var(--text-body);font-size:1rem;line-height:1.9;margin-top:16px;">
-        Every bar is crafted by hand using natural ingredients sourced carefully, with no harsh chemicals or synthetic additives.
-        From our home in Karumathampatti, Coimbatore, we deliver clean, green, organic goodness straight to your door.
-      </p>
-    </div>
-  </section>
-
-  <!-- Manufacturer + Marketing -->
-  <section class="section section--cream">
     <div class="container">
-      <h2 class="section-title">Our Details</h2>
-      <p class="section-subtitle">Complete transparency — as it should be.</p>
+      <div class="section-eyebrow" data-animate>Our Story</div>
+      <div class="about-story" data-animate data-animate-delay="100">
+        <p>
+          Mom'z Factory was born out of a simple belief — that what you put on your skin matters as much as what you put in your body. We set out to create handmade soaps that are honest, effective, and kind to the earth.
+        </p>
+        <p>
+          Every bar is crafted by hand using natural ingredients, free from harsh chemicals and synthetic additives. No shortcuts, no compromises — just pure, wholesome skincare made with love in Coimbatore.
+        </p>
+        <p>
+          We're proud to be local, proudly Indian, and committed to keeping our products accessible to every family at ₹129 per bar.
+        </p>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="section-eyebrow" data-animate>Legal Details</div>
       <div class="about-grid">
-        <div class="info-card">
-          <div class="info-card__label">Manufactured by</div>
+        <div class="info-card" data-animate data-animate-delay="0">
+          <div class="info-card__label">Manufactured By</div>
           <div class="info-card__name">M/s. Cheran Beauty Care Products Pvt. Ltd.</div>
           <div class="info-card__address">
             No.10/9(1), Nehruji Street,<br>
-            Vagarayampalayam Post,<br>
-            Mopperipalayam (Vil), Karumathampatti,<br>
-            Coimbatore - 641659
+            Vagarayampalayam Post, Mopperipalayam (Vil),<br>
+            Karumathampatti, Coimbatore - 641659
           </div>
           <div class="info-card__lic">Mfg. Lic. No: C-1233</div>
         </div>
-        <div class="info-card">
-          <div class="info-card__label">Marketing by</div>
+        <div class="info-card" data-animate data-animate-delay="120">
+          <div class="info-card__label">Marketing By</div>
           <div class="info-card__name">Mom'z Factory</div>
           <div class="info-card__address">
-            1/174 Thattan thottam,<br>
-            Rayarpalayam, Karumathampatti,<br>
+            1/174 Thattan thottam, Rayarpalayam,<br>
+            Karumathampatti,<br>
             Coimbatore - 641649
           </div>
-          <div class="info-card__lic">MRP: ₹129/- (Incl. of all taxes)</div>
+          <div class="info-card__lic">MRP: ₹129/– (Incl. of all taxes)</div>
         </div>
       </div>
 
-      <div class="contact-box">
-        <div class="contact-box__title">Get in Touch</div>
-        <div class="contact-box__sub">We respond within 2 hours on WhatsApp. Come say hello!</div>
-        <div class="contact-box__actions">
-          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Mom%27z%20Factory." target="_blank" class="btn btn--whatsapp">💬 Chat on WhatsApp</a>
-          <a href="https://www.instagram.com/momzfactory" target="_blank" class="btn btn--outline">📸 Follow on Instagram</a>
+      <!-- Contact -->
+      <div class="contact-box" data-animate>
+        <h2 class="contact-box__title">Get in Touch</h2>
+        <p class="contact-box__sub">We respond within 2 hours on WhatsApp. Come say hello!</p>
+        <div class="contact-btns">
+          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20soaps."
+             target="_blank" class="btn btn--primary">
+            💬 Chat on WhatsApp
+          </a>
+          <a href="https://www.instagram.com/momzfactory"
+             target="_blank" class="btn btn--ghost">
+            📸 Follow on Instagram
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <div id="footer"></div>
+
   <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>
