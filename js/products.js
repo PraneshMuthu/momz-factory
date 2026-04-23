@@ -1,5 +1,3 @@
-const WHATSAPP_NUMBER = '919876543210'; // must match components.js
-
 function buildWhatsAppURL(product) {
   const msg = `Hi, I want to order ${product.name} (${product.weight}). Please share availability and delivery details.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
