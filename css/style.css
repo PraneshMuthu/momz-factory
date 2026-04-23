@@ -33,6 +33,8 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--green-light); outline-offset: 2px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--green-light); outline-offset: 2px; }
 
 /* ── Container ── */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
@@ -63,7 +65,7 @@ a { text-decoration: none; color: inherit; }
   background: transparent; color: var(--text);
   border: 1px solid var(--border-hover);
 }
-.btn--ghost:hover { border-color: rgba(255,255,255,0.4); }
+.btn--ghost:hover { border-color: rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 .btn--full { width: 100%; justify-content: center; }
 
 /* ── Navbar ── */
@@ -132,6 +134,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Hero ── */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(46,125,50,0.18) 0%, transparent 70%),
               linear-gradient(180deg, #0a1a0a 0%, #0a0a0a 100%);
   display: flex; align-items: center; justify-content: center;
@@ -234,7 +237,7 @@ a { text-decoration: none; color: inherit; }
   padding: 10px 24px; border-radius: var(--radius-btn);
   border: 1px solid var(--border); background: transparent;
   color: var(--text-muted); font-family: 'Poppins', sans-serif;
-  font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .filter-tab:hover { border-color: var(--border-hover); color: var(--text); }
 .filter-tab.active { background: var(--green); border-color: var(--green); color: #fff; }
@@ -429,4 +432,10 @@ a { text-decoration: none; color: inherit; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .hero__stats { gap: 24px; }
   .why-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] { transition: none; opacity: 1; transform: none; }
+  .cart-bubble { animation: none; }
+  .cart-panel__sheet { transition: none; }
 }
