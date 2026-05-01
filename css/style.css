@@ -259,10 +259,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   border-color: var(--border-hover);
 }
 .product-card__img {
-  height: 220px; display: flex; align-items: center;
+  height: 320px; display: flex; align-items: center;
   justify-content: center; overflow: hidden; position: relative;
+  background: #f7f2ec;
 }
-.product-card__photo { width: 100%; height: 100%; object-fit: cover; }
+.product-card__photo { width: 100%; height: 100%; object-fit: contain; }
 .product-card__swatch {
   width: 100px; height: 140px; border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
