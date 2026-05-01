@@ -12,7 +12,7 @@ function renderCard(product, delay) {
     '     data-animate data-animate-delay="' + delay + '">',
     '  <div class="product-card__img" style="background:' + swatchBg + ';">',
     '    <img',
-    '      src="assets/images/' + product.id + '.jpg"',
+    '      src="assets/products/' + product.id + '.png"',
     '      alt="' + product.name + '"',
     '      class="product-card__photo"',
     '      onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">',
