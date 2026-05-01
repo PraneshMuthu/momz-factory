@@ -1,4 +1,4 @@
-var WHATSAPP_NUMBER = '919876543210'; // Update before launch
+var WHATSAPP_NUMBER = '919842275189';
 
 var NAV_LINKS = [
   { href: 'index.html',    label: 'Home' },
