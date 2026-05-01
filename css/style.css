@@ -433,7 +433,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   .footer__inner { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .products-grid { grid-template-columns: 1fr; gap: 16px; }
+  .product-card__img { height: 260px; }
   .hero__stats { gap: 24px; }
   .why-grid { grid-template-columns: 1fr 1fr; }
 }
