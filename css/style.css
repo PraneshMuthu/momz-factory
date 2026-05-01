@@ -376,6 +376,68 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 .cart-panel__total { font-size: 18px; font-weight: 900; color: var(--green); margin-bottom: 14px; text-align: center; }
 .cart-panel__empty { text-align: center; padding: 48px 24px; color: var(--text-muted); font-size: 14px; }
 
+/* ── Address Modal ── */
+.address-modal { position: fixed; inset: 0; z-index: 500; display: none; }
+.address-modal.open { display: block; }
+.address-modal__overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.50); backdrop-filter: blur(4px);
+}
+.address-modal__sheet {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: #fff; border-radius: 24px 24px 0 0;
+  max-height: 92vh; overflow-y: auto;
+  box-shadow: 0 -8px 48px rgba(0,0,0,0.22);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.address-modal.open .address-modal__sheet { transform: translateY(0); }
+.address-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 0;
+}
+.address-modal__title { font-size: 17px; font-weight: 700; color: var(--green-dark); }
+.address-modal__close {
+  width: 32px; height: 32px; border-radius: 50%; border: none;
+  background: rgba(0,0,0,0.06); cursor: pointer; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.address-modal__close:hover { background: rgba(0,0,0,0.12); }
+.address-modal__sub {
+  font-size: 13px; color: var(--text-muted); line-height: 1.55;
+  padding: 8px 24px 16px;
+}
+.address-modal__body { padding: 0 24px; display: flex; flex-direction: column; gap: 14px; }
+.addr-field { display: flex; flex-direction: column; gap: 5px; }
+.addr-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); }
+.addr-input {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--text);
+  background: #fafafa; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.addr-input::placeholder { color: var(--text-faint); }
+.addr-input:focus {
+  border-color: var(--green); background: #fff;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.10);
+}
+.addr-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.address-modal__footer {
+  padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 14px;
+  border-top: 1px solid var(--border); margin-top: 20px;
+}
+.addr-save-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text-muted); cursor: pointer;
+  user-select: none;
+}
+.addr-save-label input[type="checkbox"] {
+  width: 18px; height: 18px; accent-color: var(--green); cursor: pointer;
+}
+
 /* ── About ── */
 .about-story { max-width: 640px; margin: 0 auto 64px; font-size: 16px; color: var(--text-muted); line-height: 1.8; text-align: center; }
 .about-story p { margin-bottom: 16px; }
@@ -445,4 +507,5 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   [data-animate] { transition: none; opacity: 1; transform: none; }
   .cart-bubble { animation: none; }
   .cart-panel__sheet { transition: none; }
+  .address-modal__sheet { transition: none; }
 }
