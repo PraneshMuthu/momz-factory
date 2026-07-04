@@ -178,6 +178,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 .hero__img-accent--1 { top: -12px; left: -28px; transform: rotate(-6deg); }
 .hero__img-accent--2 { bottom: -12px; right: -18px; transform: rotate(5deg); }
 .hero__stat-num { font-size: 28px; font-weight: 900; color: var(--green); line-height: 1; }
+.hero__stat-mrp { font-size: 15px; font-weight: 500; color: var(--text-faint); text-decoration: line-through; }
 .hero__stat-label { font-size: 11px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 
 /* ── Sections ── */
