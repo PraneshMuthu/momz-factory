@@ -31,6 +31,16 @@ and a "% OFF" badge:
 
 Remove the `mrp` line to end the discount.
 
+**Mark a product as new** — add:
+
+```json
+"isNew": true,
+```
+
+A green "New" badge appears on the top-right of the photo. It can be
+combined with a discount (the % OFF badge sits on the left). Remove the
+line once the product isn't new anymore.
+
 **Mark a product out of stock** — set:
 
 ```json
@@ -72,6 +82,7 @@ The filter tab appears automatically, in the order listed.
 | `benefit` | yes | One-line description on the card |
 | `price` | yes | Selling price in ₹ |
 | `mrp` | no | Original price; shows strikethrough + % OFF badge when > `price` |
+| `isNew` | no | `true` shows a green "New" badge on the photo |
 | `inStock` | no | `false` greys the card out and disables Add (default `true`) |
 | `weight` | yes | Shown as a tag, e.g. `100g`, `500ml` |
 | `type` | yes | Shown as a tag, e.g. `Handmade Soap` |

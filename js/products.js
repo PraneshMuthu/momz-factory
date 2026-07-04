@@ -22,6 +22,9 @@ function renderCard(product, delay) {
   } else if (hasDiscount) {
     badge = '<span class="product-card__badge product-card__badge--off">' + pctOff + '% OFF</span>';
   }
+  if (!oos && product.isNew) {
+    badge += '<span class="product-card__badge product-card__badge--new">New</span>';
+  }
 
   var priceHtml = hasDiscount
     ? '<div><span class="product-card__mrp">&#8377;' + product.mrp + '</span><span class="product-card__sale">&#8377;' + product.price + '</span></div>'

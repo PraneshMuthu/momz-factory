@@ -319,6 +319,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 }
 .product-card__badge--off { background: var(--red); color: #fff; }
 .product-card__badge--oos { background: rgba(26,26,26,0.78); color: #fff; }
+.product-card__badge--new { left: auto; right: 12px; background: var(--green); color: #fff; }
 .product-card--oos .product-card__photo,
 .product-card--oos .product-card__swatch { filter: grayscale(0.85); opacity: 0.55; }
 .products-error {
