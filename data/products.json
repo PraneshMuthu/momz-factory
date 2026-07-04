@@ -12,7 +12,8 @@
       "colorBorder": "#e0e0d8",
       "colorText": "#555555",
       "benefit": "Nourishes and moisturizes skin, leaving it soft and healthy.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
@@ -25,20 +26,23 @@
       "colorBorder": "#b8926a",
       "colorText": "#ffffff",
       "benefit": "Deep cleanses skin, controls oil and helps reduce acne and blemishes.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
     {
-      "id": "red-wine-soap",
-      "name": "Red Wine Soap",
+      "id": "kadalaimavu-soap",
+      "name": "Kadalaimavu Soap",
       "category": "soap",
-      "color": "#9b2335",
-      "colorBorder": "#7b1525",
-      "colorText": "#ffffff",
-      "benefit": "Rich in antioxidants, helps in anti-aging and gives a natural glow.",
-      "price": 129,
+      "color": "#e8c97a",
+      "colorBorder": "#c8a94e",
+      "colorText": "#5a4516",
+      "benefit": "Traditional gram-flour soap that gently exfoliates and brings out a natural glow.",
+      "mrp": 300,
+      "price": 199,
+      "isNew": true,
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
@@ -51,9 +55,24 @@
       "colorBorder": "#5a7e4e",
       "colorText": "#ffffff",
       "benefit": "Helps in treating skin infections and soothes irritated skin.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
       "weight": "100g",
+      "type": "Handmade Soap"
+    },
+    {
+      "id": "red-wine-soap",
+      "name": "Red Wine Soap",
+      "category": "soap",
+      "color": "#9b2335",
+      "colorBorder": "#7b1525",
+      "colorText": "#ffffff",
+      "benefit": "Rich in antioxidants, helps in anti-aging and gives a natural glow.",
+      "mrp": 300,
+      "price": 199,
+      "inStock": true,
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -64,9 +83,10 @@
       "colorBorder": "#d09000",
       "colorText": "#ffffff",
       "benefit": "Brightens skin, reduces tan and fights acne naturally.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -77,9 +97,10 @@
       "colorBorder": "#3a6c3e",
       "colorText": "#ffffff",
       "benefit": "Antibacterial and purifying, helps in acne and pimple control.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -90,9 +111,10 @@
       "colorBorder": "#88b582",
       "colorText": "#2e5e2e",
       "benefit": "Hydrates and soothes the skin, perfect for daily gentle care.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -103,9 +125,10 @@
       "colorBorder": "#5f3e27",
       "colorText": "#ffffff",
       "benefit": "Exfoliates dead skin cells and gives a refreshed and bright look.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -116,9 +139,10 @@
       "colorBorder": "#1a1a1a",
       "colorText": "#ffffff",
       "benefit": "Detoxifies skin, removes impurities and excess oil.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -129,9 +153,10 @@
       "colorBorder": "#c88090",
       "colorText": "#5e1a2e",
       "benefit": "Soothes and hydrates, leaving skin soft and fragrant.",
-      "price": 129,
+      "mrp": 300,
+      "price": 199,
       "inStock": true,
-      "weight": "100g",
+      "weight": "800g",
       "type": "Handmade Soap"
     },
     {
@@ -142,7 +167,8 @@
       "colorBorder": "#42a5f5",
       "colorText": "#ffffff",
       "benefit": "Gentle on clothes, tough on stains. Natural formula, safe for skin.",
-      "price": 129,
+      "mrp": 400,
+      "price": 199,
       "inStock": true,
       "weight": "500ml",
       "type": "Liquid Detergent"

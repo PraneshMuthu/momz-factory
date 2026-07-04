@@ -17,7 +17,5 @@ var SITE = {
   addressLines: [
     '1/174 Thattan thottam, Rayarpalayam,',
     'Karumathampatti, Coimbatore - 641649'
-  ],
-  mfgLicense: 'C-1233',
-  manufacturer: 'M/s. Cheran Beauty Care Products Pvt. Ltd.'
+  ]
 };

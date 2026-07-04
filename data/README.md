@@ -3,7 +3,7 @@
 Three files in this folder control the site's content:
 
 - **`products.json`** — the product catalog (this guide)
-- **`site.js`** — WhatsApp number, Instagram, address, license
+- **`site.js`** — WhatsApp number, Instagram, address
 - **`testimonials.json`** — customer reviews on the home page
 
 # Editing the product catalog

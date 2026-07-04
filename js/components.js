@@ -90,8 +90,7 @@ function buildFooter() {
     '      </div>',
     '    </div>',
     '    <div class="footer__bottom">',
-    '      <span>© ' + new Date().getFullYear() + ' ' + SITE.brandName + ' · Mfg. Lic. No: ' + SITE.mfgLicense + '</span>',
-    '      <span>Manufactured by ' + SITE.manufacturer + '</span>',
+    '      <span>© ' + new Date().getFullYear() + ' ' + SITE.brandName + '</span>',
     '    </div>',
     '  </div>',
     '</footer>'

@@ -9,7 +9,7 @@ WhatsApp messages.
 | To change… | Edit… |
 |---|---|
 | Prices, discounts, stock, add/remove products | `data/products.json` — see [data/README.md](data/README.md) |
-| WhatsApp number, Instagram, address, license | `data/site.js` |
+| WhatsApp number, Instagram, address | `data/site.js` |
 | Customer reviews on the home page | `data/testimonials.json` |
 | Product photos | `assets/products/<product-id>.jpg` |
 | Page copy (hero text, About story) | `index.html` / `about.html` |
