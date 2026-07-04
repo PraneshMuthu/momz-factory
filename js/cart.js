@@ -203,7 +203,7 @@ var Cart = {
     bubble.id = 'cart-bubble';
     bubble.className = 'cart-bubble';
     bubble.setAttribute('aria-label', 'Open cart');
-    bubble.innerHTML = '🛒<span class="cart-bubble__count">0</span>';
+    bubble.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-bubble__count">0</span>';
     bubble.addEventListener('click', Cart.openPanel);
     document.body.appendChild(bubble);
 
@@ -222,7 +222,8 @@ var Cart = {
       '  <div class="cart-panel__footer">',
       '    <div class="cart-panel__total">Total: ₹<span id="cart-total">0</span></div>',
       '    <button id="cart-whatsapp-btn" class="btn btn--primary btn--full">',
-      '      💬 Order on WhatsApp',
+      '      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.849L.057 23.428a.5.5 0 0 0 .609.61l5.627-1.476A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.37-.22-3.338.875.892-3.254-.242-.382A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>',
+      '      Order on WhatsApp',
       '    </button>',
       '  </div>',
       '</div>'
@@ -255,7 +256,7 @@ var Cart = {
       '<div class="address-modal__overlay"></div>',
       '<div class="address-modal__sheet">',
       '  <div class="address-modal__header">',
-      '    <span class="address-modal__title">📦 Delivery Address</span>',
+      '    <span class="address-modal__title">Delivery Address</span>',
       '    <button class="address-modal__close" aria-label="Close">✕</button>',
       '  </div>',
       '  <p class="address-modal__sub">We\'ll include this in your WhatsApp message so delivery is seamless.</p>',
@@ -289,7 +290,8 @@ var Cart = {
       '      <span>Remember my address</span>',
       '    </label>',
       '    <button id="addr-send-btn" class="btn btn--primary btn--full">',
-      '      💬 Send Order on WhatsApp',
+      '      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.849L.057 23.428a.5.5 0 0 0 .609.61l5.627-1.476A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.37-.22-3.338.875.892-3.254-.242-.382A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>',
+      '      Send Order on WhatsApp',
       '    </button>',
       '  </div>',
       '</div>'
