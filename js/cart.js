@@ -7,6 +7,21 @@ function loadCartItems() {
 
 var CART_STATE = { items: loadCartItems() };
 
+/* Shared catalog loader — one no-cache fetch per page, reused by
+   products.js. no-cache means price/stock edits reach visitors
+   immediately instead of waiting out the browser cache. */
+var CATALOG_PROMISE = null;
+function loadCatalog() {
+  if (!CATALOG_PROMISE) {
+    CATALOG_PROMISE = fetch('data/products.json', { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      });
+  }
+  return CATALOG_PROMISE;
+}
+
 /* ── Address (localStorage) ── */
 var Address = {
   KEY: 'momz_delivery',
@@ -88,6 +103,24 @@ var Cart = {
     msg.push('Please confirm availability and payment details. Thank you!');
 
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg.join('\n'));
+  },
+
+  /* Reconcile the persisted cart with the live catalog: refresh prices
+     and names, drop products that were removed or went out of stock —
+     so WhatsApp orders never quote stale data. */
+  syncWithCatalog: function (products) {
+    Object.keys(CART_STATE.items).forEach(function (id) {
+      var fresh = null;
+      for (var i = 0; i < products.length; i++) {
+        if (products[i].id === id) { fresh = products[i]; break; }
+      }
+      if (!fresh || fresh.inStock === false) {
+        delete CART_STATE.items[id];
+      } else {
+        CART_STATE.items[id].product = fresh;
+      }
+    });
+    Cart._update();
   },
 
   openPanel: function () {
@@ -315,7 +348,30 @@ var Cart = {
 
     /* restore badge/bubble from persisted cart */
     Cart._update();
+
+    /* then reconcile against the live catalog */
+    loadCatalog()
+      .then(function (data) { Cart.syncWithCatalog(data.products || []); })
+      .catch(function () { /* offline/broken JSON: keep the stored cart */ });
   }
 };
 
 document.addEventListener('DOMContentLoaded', Cart._inject);
+
+/* Back/forward navigation can restore this page from the browser's
+   back-forward cache without re-running scripts — reload the cart from
+   storage so the badge doesn't show a stale (e.g. empty) state. */
+window.addEventListener('pageshow', function (e) {
+  if (e.persisted) {
+    CART_STATE.items = loadCartItems();
+    Cart._update();
+  }
+});
+
+/* Keep multiple open tabs in sync. */
+window.addEventListener('storage', function (e) {
+  if (e.key === CART_KEY) {
+    CART_STATE.items = loadCartItems();
+    Cart._update();
+  }
+});

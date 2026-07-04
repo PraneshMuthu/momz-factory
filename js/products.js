@@ -39,7 +39,7 @@ function renderCard(product, delay) {
     '    <img',
     '      src="assets/products/' + product.id + '.jpg"',
     '      alt="' + product.name + '"',
-    '      class="product-card__photo"',
+    '      class="product-card__photo" loading="lazy"',
     '      onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">',
     '    <div class="product-card__swatch"',
     '      style="display:none; background:linear-gradient(135deg,' + product.color + ',' + product.colorBorder + '); color:' + product.colorText + ';">',
@@ -129,11 +129,8 @@ function setupFilters() {
 var PRODUCTS = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('data/products.json')
-    .then(function (res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json();
-    })
+  /* loadCatalog comes from cart.js (loaded first) — shared no-cache fetch */
+  loadCatalog()
     .then(function (data) {
       PRODUCTS = data.products || [];
       renderFilters(data.categories || {}, PRODUCTS);

@@ -1,0 +1,31 @@
+name: Validate data files
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate products.json
+        run: node -e "JSON.parse(require('fs').readFileSync('data/products.json','utf8')); console.log('products.json OK')"
+
+      - name: Validate testimonials.json
+        run: node -e "JSON.parse(require('fs').readFileSync('data/testimonials.json','utf8')); console.log('testimonials.json OK')"
+
+      - name: Check site.js syntax
+        run: node --check data/site.js && echo "site.js OK"
+
+      - name: Check product images exist
+        run: |
+          node -e "
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('data/products.json','utf8'));
+            const missing = data.products.filter(p => !fs.existsSync('assets/products/' + p.id + '.jpg'));
+            if (missing.length) {
+              console.log('Note: no photo yet for: ' + missing.map(p => p.id).join(', ') + ' (color swatch will show)');
+            } else {
+              console.log('All product images present');
+            }
+          "

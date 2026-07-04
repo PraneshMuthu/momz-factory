@@ -1,3 +1,11 @@
+# Editing the site content
+
+Three files in this folder control the site's content:
+
+- **`products.json`** — the product catalog (this guide)
+- **`site.js`** — WhatsApp number, Instagram, address, license
+- **`testimonials.json`** — customer reviews on the home page
+
 # Editing the product catalog
 
 Everything the Products page shows comes from `data/products.json`.
