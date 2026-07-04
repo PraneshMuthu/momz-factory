@@ -34,7 +34,7 @@ function buildNavbar() {
     '  <div class="container">',
     '    <div class="navbar__inner">',
     '      <a href="index.html" class="navbar__brand">',
-    '        <img src="assets/logo.png" class="navbar__logo" alt="' + SITE.brandName + ' logo"',
+    '        <img src="assets/logo.webp" class="navbar__logo" alt="' + SITE.brandName + ' logo"',
     '             onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">',
     '        <div class="navbar__logo-fallback">' + ICONS.leaf + '</div>',
     '        <div>',

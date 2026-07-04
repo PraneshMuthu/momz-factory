@@ -55,6 +55,8 @@ disabled. Set back to `true` when restocked.
 1. Give it a unique `id` (lowercase-with-hyphens, e.g. `lavender-soap`)
 2. Add its photo at `assets/products/<id>.jpg` (roughly square, ≥600px).
    No photo yet? The card shows a colored swatch from `color` until you add one.
+   (Optional: also add a `<id>.webp` copy — the site prefers it because it
+   loads ~2× faster, and falls back to the .jpg automatically if absent.)
 3. Fill in `name`, `benefit`, `price`, `weight`, `type`, `category`
 
 **Remove a product** — delete its block (watch the commas between blocks).
