@@ -1,4 +1,11 @@
-var CART_STATE = { items: {} };
+var CART_KEY = 'momz_cart';
+
+function loadCartItems() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+
+var CART_STATE = { items: loadCartItems() };
 
 /* ── Address (localStorage) ── */
 var Address = {
@@ -97,6 +104,9 @@ var Cart = {
   },
 
   _update: function () {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(CART_STATE.items)); }
+    catch (e) {}
+
     var count = Cart.getCount();
 
     var bubble = document.getElementById('cart-bubble');
@@ -196,16 +206,16 @@ var Cart = {
   },
 
   _inject: function () {
-    if (!document.getElementById('productsGrid')) return;
-
-    /* ── Cart bubble ── */
-    var bubble = document.createElement('button');
-    bubble.id = 'cart-bubble';
-    bubble.className = 'cart-bubble';
-    bubble.setAttribute('aria-label', 'Open cart');
-    bubble.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-bubble__count">0</span>';
-    bubble.addEventListener('click', Cart.openPanel);
-    document.body.appendChild(bubble);
+    /* ── Cart bubble (products page only) ── */
+    if (document.getElementById('productsGrid')) {
+      var bubble = document.createElement('button');
+      bubble.id = 'cart-bubble';
+      bubble.className = 'cart-bubble';
+      bubble.setAttribute('aria-label', 'Open cart');
+      bubble.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-bubble__count">0</span>';
+      bubble.addEventListener('click', Cart.openPanel);
+      document.body.appendChild(bubble);
+    }
 
     /* ── Cart panel ── */
     var panel = document.createElement('div');
@@ -302,6 +312,9 @@ var Cart = {
     modal.querySelector('#addr-send-btn').addEventListener('click', Cart._sendOrder);
 
     document.body.appendChild(modal);
+
+    /* restore badge/bubble from persisted cart */
+    Cart._update();
   }
 };
 
