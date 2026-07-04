@@ -91,7 +91,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 }
 .navbar__name { font-size: 18px; font-weight: 700; line-height: 1.1; color: #fff; }
 .navbar__tagline { font-size: 10px; color: rgba(255,255,255,0.70); letter-spacing: 1.5px; text-transform: uppercase; }
-.navbar__links { display: flex; align-items: center; gap: 40px; list-style: none; margin-right: 40px; }
+.navbar__links { display: flex; align-items: center; gap: 40px; list-style: none; margin-left: auto; margin-right: 40px; }
 .navbar__links a {
   font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 500;
   letter-spacing: 0.4px; transition: color 0.2s; padding: 8px 0;
