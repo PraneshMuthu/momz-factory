@@ -1,4 +1,8 @@
 {
+  "categories": {
+    "soap": "Soaps",
+    "household": "Household"
+  },
   "products": [
     {
       "id": "goat-milk-soap",
@@ -9,6 +13,7 @@
       "colorText": "#555555",
       "benefit": "Nourishes and moisturizes skin, leaving it soft and healthy.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -21,6 +26,7 @@
       "colorText": "#ffffff",
       "benefit": "Deep cleanses skin, controls oil and helps reduce acne and blemishes.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -33,6 +39,7 @@
       "colorText": "#ffffff",
       "benefit": "Rich in antioxidants, helps in anti-aging and gives a natural glow.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -45,6 +52,7 @@
       "colorText": "#ffffff",
       "benefit": "Helps in treating skin infections and soothes irritated skin.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -57,6 +65,7 @@
       "colorText": "#ffffff",
       "benefit": "Brightens skin, reduces tan and fights acne naturally.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -69,6 +78,7 @@
       "colorText": "#ffffff",
       "benefit": "Antibacterial and purifying, helps in acne and pimple control.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -81,6 +91,7 @@
       "colorText": "#2e5e2e",
       "benefit": "Hydrates and soothes the skin, perfect for daily gentle care.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -93,6 +104,7 @@
       "colorText": "#ffffff",
       "benefit": "Exfoliates dead skin cells and gives a refreshed and bright look.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -105,6 +117,7 @@
       "colorText": "#ffffff",
       "benefit": "Detoxifies skin, removes impurities and excess oil.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -117,6 +130,7 @@
       "colorText": "#5e1a2e",
       "benefit": "Soothes and hydrates, leaving skin soft and fragrant.",
       "price": 129,
+      "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap"
     },
@@ -129,6 +143,7 @@
       "colorText": "#ffffff",
       "benefit": "Gentle on clothes, tough on stains. Natural formula, safe for skin.",
       "price": 129,
+      "inStock": true,
       "weight": "500ml",
       "type": "Liquid Detergent"
     }

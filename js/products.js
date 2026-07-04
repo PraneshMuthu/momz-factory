@@ -1,3 +1,8 @@
+/* The product catalog is data-driven: edit data/products.json to add or
+   remove products, change prices, add a discount (mrp) or mark items out
+   of stock. See data/README.md for the field reference. No code changes
+   needed for catalog updates. */
+
 function hexToRgb(hex) {
   var r = parseInt(hex.slice(1, 3), 16);
   var g = parseInt(hex.slice(3, 5), 16);
@@ -7,10 +12,30 @@ function hexToRgb(hex) {
 
 function renderCard(product, delay) {
   var swatchBg = 'rgba(' + hexToRgb(product.color) + ', 0.10)';
+  var oos = product.inStock === false;
+  var hasDiscount = !oos && product.mrp && product.mrp > product.price;
+  var pctOff = hasDiscount ? Math.round((1 - product.price / product.mrp) * 100) : 0;
+
+  var badge = '';
+  if (oos) {
+    badge = '<span class="product-card__badge product-card__badge--oos">Out of Stock</span>';
+  } else if (hasDiscount) {
+    badge = '<span class="product-card__badge product-card__badge--off">' + pctOff + '% OFF</span>';
+  }
+
+  var priceHtml = hasDiscount
+    ? '<div><span class="product-card__mrp">&#8377;' + product.mrp + '</span><span class="product-card__sale">&#8377;' + product.price + '</span></div>'
+    : '<span class="product-card__sale">&#8377;' + product.price + '</span>';
+
+  var buttonHtml = oos
+    ? '<button class="add-to-cart-btn" disabled>Unavailable</button>'
+    : '<button class="add-to-cart-btn" data-product-id="' + product.id + '">+ Add</button>';
+
   return [
-    '<div class="product-card" data-category="' + product.category + '"',
+    '<div class="product-card' + (oos ? ' product-card--oos' : '') + '" data-category="' + product.category + '"',
     '     data-animate data-animate-delay="' + delay + '">',
     '  <div class="product-card__img" style="background:' + swatchBg + ';">',
+    '    ' + badge,
     '    <img',
     '      src="assets/products/' + product.id + '.jpg"',
     '      alt="' + product.name + '"',
@@ -30,14 +55,31 @@ function renderCard(product, delay) {
     '    </div>',
     '    <div class="product-card__footer">',
     '      <div class="product-card__price">',
-    '        <span class="product-card__sale">&#8377;' + product.price + '</span>',
+    '        ' + priceHtml,
     '        <span class="product-card__incl">incl. taxes</span>',
     '      </div>',
-    '      <button class="add-to-cart-btn" data-product-id="' + product.id + '">+ Add</button>',
+    '      ' + buttonHtml,
     '    </div>',
     '  </div>',
     '</div>'
   ].join('\n');
+}
+
+function renderFilters(categories, products) {
+  var bar = document.querySelector('.filter-bar');
+  if (!bar) return;
+
+  var cats = Object.keys(categories);
+  products.forEach(function (p) {
+    if (cats.indexOf(p.category) === -1) cats.push(p.category);
+  });
+
+  var html = '<button class="filter-tab active" data-filter="all">All Products</button>';
+  cats.forEach(function (c) {
+    var label = categories[c] || (c.charAt(0).toUpperCase() + c.slice(1));
+    html += '<button class="filter-tab" data-filter="' + c + '">' + label + '</button>';
+  });
+  bar.innerHTML = html;
 }
 
 function renderGrid(products) {
@@ -47,14 +89,14 @@ function renderGrid(products) {
     return renderCard(p, i * 80);
   }).join('');
 
-  grid.querySelectorAll('.add-to-cart-btn').forEach(function (btn) {
+  grid.querySelectorAll('.add-to-cart-btn[data-product-id]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var id = btn.dataset.productId;
       var product = PRODUCTS.find(function (p) { return p.id === id; });
-      if (!product) return;
+      if (!product || product.inStock === false) return;
       Cart.add(product);
       btn.classList.add('added');
-      btn.textContent = '\u2713 Added';
+      btn.textContent = '✓ Added';
       setTimeout(function () {
         btn.classList.remove('added');
         btn.textContent = '+ Add';
@@ -84,22 +126,24 @@ function setupFilters() {
   });
 }
 
-/* Keep in sync with data/products.json — the page renders from this array. */
-var PRODUCTS = [
-  { id: 'goat-milk-soap',       name: 'Goat Milk Soap',       category: 'soap',      color: '#f5f5f0', colorBorder: '#e0e0d8', colorText: '#555555', benefit: 'Nourishes and moisturizes skin, leaving it soft and healthy.',                    price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'multani-metti-soap',   name: 'Multani Mitti Soap',   category: 'soap',      color: '#c8a882', colorBorder: '#b8926a', colorText: '#ffffff', benefit: 'Deep cleanses skin, controls oil and helps reduce acne and blemishes.',          price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'red-wine-soap',        name: 'Red Wine Soap',        category: 'soap',      color: '#9b2335', colorBorder: '#7b1525', colorText: '#ffffff', benefit: 'Rich in antioxidants, helps in anti-aging and gives a natural glow.',            price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'kuppaimeni-soap',      name: 'Kuppaimeni Soap',      category: 'soap',      color: '#7a9e6e', colorBorder: '#5a7e4e', colorText: '#ffffff', benefit: 'Helps in treating skin infections and soothes irritated skin.',                   price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'turmeric-soap',        name: 'Turmeric Soap',        category: 'soap',      color: '#f0a500', colorBorder: '#d09000', colorText: '#ffffff', benefit: 'Brightens skin, reduces tan and fights acne naturally.',                         price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'neem-soap',            name: 'Neem Soap',            category: 'soap',      color: '#4a7c4e', colorBorder: '#3a6c3e', colorText: '#ffffff', benefit: 'Antibacterial and purifying, helps in acne and pimple control.',                 price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'aloe-vera-soap',       name: 'Aloe Vera Soap',       category: 'soap',      color: '#a8d5a2', colorBorder: '#88b582', colorText: '#2e5e2e', benefit: 'Hydrates and soothes the skin, perfect for daily gentle care.',                  price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'coffee-soap',          name: 'Coffee Soap',          category: 'soap',      color: '#6f4e37', colorBorder: '#5f3e27', colorText: '#ffffff', benefit: 'Exfoliates dead skin cells and gives a refreshed and bright look.',              price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'charcoal-soap',        name: 'Charcoal Soap',        category: 'soap',      color: '#2c2c2c', colorBorder: '#1a1a1a', colorText: '#ffffff', benefit: 'Detoxifies skin, removes impurities and excess oil.',                            price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'rose-soap',            name: 'Rose Soap',            category: 'soap',      color: '#e8a0b0', colorBorder: '#c88090', colorText: '#5e1a2e', benefit: 'Soothes and hydrates, leaving skin soft and fragrant.',                          price: 129, weight: '100g',  type: 'Handmade Soap'    },
-  { id: 'cloth-washing-liquid', name: 'Cloth Washing Liquid', category: 'household', color: '#64b5f6', colorBorder: '#42a5f5', colorText: '#ffffff', benefit: 'Gentle on clothes, tough on stains. Natural formula, safe for skin.',            price: 129, weight: '500ml', type: 'Liquid Detergent' }
-];
+var PRODUCTS = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-  renderGrid(PRODUCTS);
-  setupFilters();
+  fetch('data/products.json')
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      PRODUCTS = data.products || [];
+      renderFilters(data.categories || {}, PRODUCTS);
+      renderGrid(PRODUCTS);
+      setupFilters();
+    })
+    .catch(function () {
+      var grid = document.getElementById('productsGrid');
+      if (grid) {
+        grid.innerHTML = '<div class="products-error">Could not load products right now. Please refresh the page or try again shortly.</div>';
+      }
+    });
 });
