@@ -14,8 +14,10 @@ WhatsApp messages.
 | Product photos | `assets/products/<product-id>.jpg` |
 | Page copy (hero text, About story) | `index.html` / `about.html` |
 
-Every push to `master` deploys the live site (via Cloudflare Pages /
-GitHub Pages). A GitHub Action checks the data files on each push —
+Every push to `master` deploys the live site at **momzfactory.in** via
+Cloudflare Pages — accounts, domain, renewal dates and troubleshooting
+are documented in [DEPLOYMENT.md](DEPLOYMENT.md).
+A GitHub Action checks the data files on each push —
 if a commit gets a red ✗, a JSON edit has a syntax error (usually a
 missing comma or quote) and the live site was NOT updated safely;
 fix the file and push again.
