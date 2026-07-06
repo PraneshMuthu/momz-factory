@@ -81,11 +81,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 .header { border-bottom: 1px solid var(--border); }
 .header__inner {
   display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; height: 78px;
+  align-items: center; height: 88px;
 }
 .header__logo { justify-self: start; display: flex; align-items: center; }
 .header__logo img {
-  width: 56px; height: 56px; border-radius: 50%;
+  width: 70px; height: 70px; border-radius: 50%;
   object-fit: cover; border: 2px solid rgba(46,125,50,0.25);
 }
 .header__wordmark { justify-self: center; display: flex; align-items: center; }
@@ -553,8 +553,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 }
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
-  .header__inner { height: 64px; }
-  .header__logo img { width: 44px; height: 44px; }
+  .header__inner { height: 70px; }
+  .header__logo img { width: 54px; height: 54px; }
   .header__wordmark img { height: 34px; }
   .header__nav { gap: 22px; justify-content: flex-start; }
   .usp-strip__row { gap: 14px 22px; }

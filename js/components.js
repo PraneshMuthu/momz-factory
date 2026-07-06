@@ -29,29 +29,29 @@ function buildNavbar() {
            '>' + link.label + '</a>';
   }).join('');
 
+  /* announce bar and sticky header are siblings so position:sticky can
+     hold the header at the top of the page while the bar scrolls away */
   return [
-    '<header class="topbar">',
-    '  <div class="announce">' + SITE.tagline + ' · Handmade in Coimbatore · Order on WhatsApp</div>',
-    '  <div class="header-sticky">',
-    '    <div class="header">',
-    '      <div class="container header__inner">',
-    '        <a href="#" class="header__logo" aria-label="' + SITE.brandName + ' home">',
-    '          <img src="assets/logo.webp" alt="' + SITE.brandName + ' logo">',
-    '        </a>',
-    '        <a href="#" class="header__wordmark">',
-    '          <img src="assets/wordmark.webp" alt="' + SITE.brandName + '"',
-    '               onerror="this.outerHTML=\'<span class=&quot;header__wordmark-text&quot;>' + SITE.brandName + '</span>\';">',
-    '        </a>',
-    '        <button class="navbar__cart-btn header__cart" id="navCartBtn" aria-label="Open cart">',
-    '          ' + ICONS.cart,
-    '          <span class="navbar__cart-count" id="navCartCount"></span>',
-    '        </button>',
-    '      </div>',
+    '<div class="announce">' + SITE.tagline + ' · Handmade in Coimbatore · Order on WhatsApp</div>',
+    '<header class="header-sticky">',
+    '  <div class="header">',
+    '    <div class="container header__inner">',
+    '      <a href="#" class="header__logo" aria-label="' + SITE.brandName + ' home">',
+    '        <img src="assets/logo.webp" alt="' + SITE.brandName + ' logo">',
+    '      </a>',
+    '      <a href="#" class="header__wordmark">',
+    '        <img src="assets/wordmark.webp" alt="' + SITE.brandName + '"',
+    '             onerror="this.outerHTML=\'<span class=&quot;header__wordmark-text&quot;>' + SITE.brandName + '</span>\';">',
+    '      </a>',
+    '      <button class="navbar__cart-btn header__cart" id="navCartBtn" aria-label="Open cart">',
+    '        ' + ICONS.cart,
+    '        <span class="navbar__cart-count" id="navCartCount"></span>',
+    '      </button>',
     '    </div>',
-    '    <nav class="header__nav">',
-    '      ' + links,
-    '    </nav>',
     '  </div>',
+    '  <nav class="header__nav">',
+    '    ' + links,
+    '  </nav>',
     '</header>'
   ].join('\n');
 }
