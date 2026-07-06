@@ -535,6 +535,17 @@ section[id] { scroll-margin-top: 98px; }
 .contact-box__sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
 .contact-btns { display: flex; flex-direction: column; gap: 12px; }
 
+/* ── Brand logo placements ── */
+.story-logo {
+  width: 108px; height: 108px; border-radius: 50%;
+  margin: 0 auto 20px; display: block;
+  border: 3px solid rgba(46,125,50,0.18);
+}
+.footer__logo {
+  width: 64px; height: 64px; border-radius: 50%;
+  margin-bottom: 14px; border: 2px solid rgba(255,255,255,0.35);
+}
+
 /* ── Footer ── */
 .footer { background: var(--green-dark); padding: 56px 0 32px; }
 .footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }

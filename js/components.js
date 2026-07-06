@@ -62,6 +62,7 @@ function buildFooter() {
     '  <div class="container">',
     '    <div class="footer__inner">',
     '      <div>',
+    '        <img src="assets/logo.webp" alt="' + SITE.brandName + ' logo" class="footer__logo">',
     '        <div class="footer__brand-name">' + SITE.brandName + '</div>',
     '        <div class="footer__tagline">' + SITE.footerTagline + '</div>',
     '        <div class="footer__address">',
