@@ -52,8 +52,7 @@
       "weight": "100g",
       "type": "Handmade Soap",
       "rating": 4.8,
-      "ratingCount": 17,
-      "bestSeller": true
+      "ratingCount": 17
     },
     {
       "id": "kuppaimeni-soap",
@@ -69,7 +68,8 @@
       "weight": "100g",
       "type": "Handmade Soap",
       "rating": 4.6,
-      "ratingCount": 14
+      "ratingCount": 14,
+      "bestSeller": true
     },
     {
       "id": "red-wine-soap",
@@ -101,8 +101,7 @@
       "weight": "800g",
       "type": "Handmade Soap",
       "rating": 4.8,
-      "ratingCount": 29,
-      "bestSeller": true
+      "ratingCount": 29
     },
     {
       "id": "neem-soap",
@@ -199,8 +198,7 @@
       "weight": "800g",
       "type": "Handmade Soap",
       "rating": 4.9,
-      "ratingCount": 9,
-      "bestSeller": true
+      "ratingCount": 9
     },
     {
       "id": "papaya-soap",
