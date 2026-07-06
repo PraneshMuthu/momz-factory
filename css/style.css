@@ -39,6 +39,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 /* ── Container ── */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 
+/* Anchor targets stop below the sticky header instead of underneath it */
+section[id] { scroll-margin-top: 142px; }
+@media (max-width: 768px) {
+  section[id] { scroll-margin-top: 122px; }
+}
+
 /* ── Animations ── */
 [data-animate] {
   opacity: 0;
