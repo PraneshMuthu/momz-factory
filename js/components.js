@@ -5,9 +5,11 @@
 var WHATSAPP_NUMBER = SITE.whatsappNumber;
 
 var NAV_LINKS = [
-  { href: 'index.html',    label: 'Home' },
-  { href: 'products.html', label: 'Products' },
-  { href: 'about.html',    label: 'About Us' },
+  { href: '#best-sellers', label: 'Best Sellers' },
+  { href: '#products',     label: 'Products' },
+  { href: '#reviews',      label: 'Reviews' },
+  { href: '#our-story',    label: 'Our Story' },
+  { href: '#contact',      label: 'Contact' },
 ];
 
 /* ── Shared SVG icons ── */
@@ -19,47 +21,35 @@ var ICONS = {
   star: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>'
 };
 
-function getActivePage() {
-  return window.location.pathname.split('/').pop() || 'index.html';
-}
-
 function buildNavbar() {
-  var active = getActivePage();
   var links = NAV_LINKS.map(function (link) {
-    return '<li><a href="' + link.href + '" class="' + (active === link.href ? 'active' : '') + '">' + link.label + '</a></li>';
+    return '<a href="' + link.href + '">' + link.label + '</a>';
   }).join('');
 
   return [
-    '<nav class="navbar">',
-    '  <div class="container">',
-    '    <div class="navbar__inner">',
-    '      <a href="index.html" class="navbar__brand">',
-    '        <img src="assets/logo.webp" class="navbar__logo" alt="' + SITE.brandName + ' logo"',
-    '             onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">',
-    '        <div class="navbar__logo-fallback">' + ICONS.leaf + '</div>',
-    '        <div>',
-    '          <div class="navbar__name">' + SITE.brandName + '</div>',
-    '          <div class="navbar__tagline">' + SITE.tagline + '</div>',
-    '        </div>',
-    '      </a>',
-    '      <ul class="navbar__links">',
-    '        ' + links,
-    '      </ul>',
-    '      <div class="navbar__actions">',
-    '        <button class="navbar__cart-btn" id="navCartBtn" aria-label="Open cart">',
+    '<header class="topbar">',
+    '  <div class="announce">' + SITE.tagline + ' · Handmade in Coimbatore · Order on WhatsApp</div>',
+    '  <div class="header-sticky">',
+    '    <div class="header">',
+    '      <div class="container header__inner">',
+    '        <a href="#" class="header__logo" aria-label="' + SITE.brandName + ' home">',
+    '          <img src="assets/logo.webp" alt="' + SITE.brandName + ' logo">',
+    '        </a>',
+    '        <a href="#" class="header__wordmark">',
+    '          <img src="assets/wordmark.webp" alt="' + SITE.brandName + '"',
+    '               onerror="this.outerHTML=\'<span class=&quot;header__wordmark-text&quot;>' + SITE.brandName + '</span>\';">',
+    '        </a>',
+    '        <button class="navbar__cart-btn header__cart" id="navCartBtn" aria-label="Open cart">',
     '          ' + ICONS.cart,
     '          <span class="navbar__cart-count" id="navCartCount"></span>',
     '        </button>',
-    '        <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">',
-    '          <span></span><span></span><span></span>',
-    '        </button>',
     '      </div>',
     '    </div>',
+    '    <nav class="header__nav">',
+    '      ' + links,
+    '    </nav>',
     '  </div>',
-    '  <div class="navbar__mobile" id="navMobile">',
-    NAV_LINKS.map(function (l) { return '    <a href="' + l.href + '">' + l.label + '</a>'; }).join('\n'),
-    '  </div>',
-    '</nav>'
+    '</header>'
   ].join('\n');
 }
 
@@ -76,7 +66,7 @@ function buildFooter() {
     '        </div>',
     '      </div>',
     '      <div>',
-    '        <div class="footer__col-title">Quick Links</div>',
+    '        <div class="footer__col-title">Explore</div>',
     '        <ul class="footer__links">',
     NAV_LINKS.map(function (l) { return '          <li><a href="' + l.href + '">' + l.label + '</a></li>'; }).join('\n'),
     '        </ul>',

@@ -16,7 +16,10 @@
       "price": 199,
       "inStock": true,
       "weight": "100g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.9,
+      "ratingCount": 38,
+      "bestSeller": true
     },
     {
       "id": "multani-metti-soap",
@@ -30,7 +33,9 @@
       "price": 199,
       "inStock": true,
       "weight": "100g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 21
     },
     {
       "id": "kadalaimavu-soap",
@@ -45,7 +50,10 @@
       "isNew": true,
       "inStock": true,
       "weight": "100g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.8,
+      "ratingCount": 17,
+      "bestSeller": true
     },
     {
       "id": "kuppaimeni-soap",
@@ -59,7 +67,9 @@
       "price": 199,
       "inStock": true,
       "weight": "100g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.6,
+      "ratingCount": 14
     },
     {
       "id": "red-wine-soap",
@@ -73,7 +83,9 @@
       "price": 199,
       "inStock": false,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 11
     },
     {
       "id": "turmeric-soap",
@@ -87,7 +99,10 @@
       "price": 199,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.8,
+      "ratingCount": 29,
+      "bestSeller": true
     },
     {
       "id": "neem-soap",
@@ -101,7 +116,9 @@
       "price": 199,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 19
     },
     {
       "id": "aloe-vera-soap",
@@ -115,7 +132,9 @@
       "price": 199,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.6,
+      "ratingCount": 16
     },
     {
       "id": "coffee-soap",
@@ -129,7 +148,9 @@
       "price": 199,
       "inStock": false,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 13
     },
     {
       "id": "charcoal-soap",
@@ -143,7 +164,9 @@
       "price": 199,
       "inStock": false,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.8,
+      "ratingCount": 22
     },
     {
       "id": "rose-soap",
@@ -157,7 +180,9 @@
       "price": 199,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.6,
+      "ratingCount": 12
     },
     {
       "id": "sandal-saffron-soap",
@@ -172,7 +197,10 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.9,
+      "ratingCount": 9,
+      "bestSeller": true
     },
     {
       "id": "papaya-soap",
@@ -187,7 +215,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 8
     },
     {
       "id": "rose-milk-soap",
@@ -202,7 +232,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.8,
+      "ratingCount": 10
     },
     {
       "id": "herbal-neem-aloevera-soap",
@@ -217,7 +249,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 7
     },
     {
       "id": "lime-soap",
@@ -232,7 +266,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.6,
+      "ratingCount": 9
     },
     {
       "id": "almond-milk-soap",
@@ -247,7 +283,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.8,
+      "ratingCount": 11
     },
     {
       "id": "coconut-milk-white-soap",
@@ -262,7 +300,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.7,
+      "ratingCount": 6
     },
     {
       "id": "sandal-soap",
@@ -277,7 +317,9 @@
       "isNew": true,
       "inStock": true,
       "weight": "800g",
-      "type": "Handmade Soap"
+      "type": "Handmade Soap",
+      "rating": 4.9,
+      "ratingCount": 15
     },
     {
       "id": "cloth-washing-liquid",
@@ -291,7 +333,26 @@
       "price": 199,
       "inStock": true,
       "weight": "500ml",
-      "type": "Liquid Detergent"
+      "type": "Liquid Detergent",
+      "rating": 4.8,
+      "ratingCount": 26
+    },
+    {
+      "id": "fabric-soap",
+      "name": "Fabric Soap",
+      "category": "household",
+      "color": "#dbe8c4",
+      "colorBorder": "#bbc8a4",
+      "colorText": "#3a4a16",
+      "benefit": "Powerful stain removal and bright whites with a fresh fragrance — gentle on fabrics.",
+      "mrp": 400,
+      "price": 199,
+      "rating": 4.9,
+      "ratingCount": 5,
+      "isNew": true,
+      "inStock": true,
+      "weight": "1 bar",
+      "type": "Washing Soap"
     }
   ]
 }

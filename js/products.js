@@ -10,6 +10,20 @@ function hexToRgb(hex) {
   return r + ',' + g + ',' + b;
 }
 
+var STAR_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>';
+
+function ratingRow(product) {
+  if (!product.rating) return '';
+  var full = Math.round(product.rating);
+  var stars = '';
+  for (var i = 0; i < 5; i++) {
+    stars += '<span class="' + (i < full ? 'star-on' : 'star-off') + '">' + STAR_SVG + '</span>';
+  }
+  return '<div class="product-card__rating" aria-label="Rated ' + product.rating + ' out of 5">' +
+         stars + '<span class="product-card__rating-num">' + product.rating.toFixed(1) +
+         ' · ' + product.ratingCount + ' reviews</span></div>';
+}
+
 function renderCard(product, delay) {
   var swatchBg = 'rgba(' + hexToRgb(product.color) + ', 0.10)';
   var oos = product.inStock === false;
@@ -52,6 +66,7 @@ function renderCard(product, delay) {
     '  </div>',
     '  <div class="product-card__body">',
     '    <div class="product-card__name">' + product.name + '</div>',
+    '    ' + ratingRow(product),
     '    <div class="product-card__benefit">' + product.benefit + '</div>',
     '    <div class="product-card__tags">',
     '      <span class="product-card__tag">' + product.weight + '</span>',
@@ -86,8 +101,8 @@ function renderFilters(categories, products) {
   bar.innerHTML = html;
 }
 
-function renderGrid(products) {
-  var grid = document.getElementById('productsGrid');
+function renderGrid(products, gridId) {
+  var grid = document.getElementById(gridId || 'productsGrid');
   if (!grid) return;
   grid.innerHTML = products.map(function (p, i) {
     return renderCard(p, i * 80);
@@ -113,19 +128,28 @@ function renderGrid(products) {
   }
 }
 
+function applyFilter(cat) {
+  document.querySelectorAll('.filter-tab').forEach(function (t) {
+    t.classList.toggle('active', t.dataset.filter === cat);
+  });
+  document.querySelectorAll('#productsGrid .product-card').forEach(function (card) {
+    var show = cat === 'all' || card.dataset.category === cat;
+    if (show) card.classList.add('is-visible');
+    card.style.display = show ? '' : 'none';
+  });
+}
+
 function setupFilters() {
   document.querySelectorAll('.filter-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
-      document.querySelectorAll('.filter-tab').forEach(function (t) {
-        t.classList.remove('active');
-      });
-      tab.classList.add('active');
-      var cat = tab.dataset.filter;
-      document.querySelectorAll('.product-card').forEach(function (card) {
-        var show = cat === 'all' || card.dataset.category === cat;
-        if (show) card.classList.add('is-visible');
-        card.style.display = show ? '' : 'none';
-      });
+      applyFilter(tab.dataset.filter);
+    });
+  });
+
+  /* Category circles: apply the matching filter, then let the anchor scroll */
+  document.querySelectorAll('.cat-circle[data-cat]').forEach(function (circle) {
+    circle.addEventListener('click', function () {
+      applyFilter(circle.dataset.cat);
     });
   });
 }
@@ -139,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
       PRODUCTS = data.products || [];
       renderFilters(data.categories || {}, PRODUCTS);
       renderGrid(PRODUCTS);
+      renderGrid(PRODUCTS.filter(function (p) { return p.bestSeller && p.inStock !== false; }), 'bestSellersGrid');
       setupFilters();
     })
     .catch(function () {
