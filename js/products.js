@@ -20,8 +20,7 @@ function ratingRow(product) {
     stars += '<span class="' + (i < full ? 'star-on' : 'star-off') + '">' + STAR_SVG + '</span>';
   }
   return '<div class="product-card__rating" aria-label="Rated ' + product.rating + ' out of 5">' +
-         stars + '<span class="product-card__rating-num">' + product.rating.toFixed(1) +
-         ' · ' + product.ratingCount + ' reviews</span></div>';
+         stars + '<span class="product-card__rating-num">' + product.rating.toFixed(1) + '</span></div>';
 }
 
 function renderCard(product, delay) {
@@ -146,10 +145,10 @@ function setupFilters() {
     });
   });
 
-  /* Category circles: apply the matching filter, then let the anchor scroll */
-  document.querySelectorAll('.cat-circle[data-cat]').forEach(function (circle) {
-    circle.addEventListener('click', function () {
-      applyFilter(circle.dataset.cat);
+  /* Nav "Soaps"/"Household" links: apply the filter, then the anchor scrolls */
+  document.querySelectorAll('.header__nav a[data-cat]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      applyFilter(link.dataset.cat);
     });
   });
 }

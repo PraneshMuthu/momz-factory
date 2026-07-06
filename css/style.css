@@ -120,27 +120,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   letter-spacing: 0.4px; white-space: nowrap; transition: color 0.2s;
 }
 .header__nav a:hover { color: var(--green); }
-
-/* ── Category circles ── */
-.cat-strip { padding: 28px 0 6px; }
-.cat-strip__row {
-  display: flex; justify-content: center; gap: 36px;
-  overflow-x: auto; padding-bottom: 10px; scrollbar-width: none;
-}
-.cat-strip__row::-webkit-scrollbar { display: none; }
-.cat-circle { text-align: center; flex-shrink: 0; }
-.cat-circle__img {
-  display: block; width: 96px; height: 96px; border-radius: 50%;
-  overflow: hidden; border: 2.5px solid rgba(46,125,50,0.25);
-  padding: 3px; background: #fff;
-  transition: border-color 0.2s, transform 0.25s;
-}
-.cat-circle__img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.cat-circle:hover .cat-circle__img { border-color: var(--green); transform: translateY(-3px); }
-.cat-circle__label {
-  display: block; margin-top: 9px; font-size: 12.5px;
-  font-weight: 600; color: var(--text);
-}
+.header__nav a.nav-accent { color: var(--green); font-weight: 700; }
+.header__nav a.nav-accent:hover { color: var(--green-dark); }
 
 /* ── USP strip ── */
 .usp-strip { background: var(--bg-mid); padding: 18px 0; }
@@ -576,8 +557,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   .header__logo img { width: 44px; height: 44px; }
   .header__wordmark img { height: 34px; }
   .header__nav { gap: 22px; justify-content: flex-start; }
-  .cat-strip__row { justify-content: flex-start; gap: 22px; padding: 0 4px 10px; }
-  .cat-circle__img { width: 76px; height: 76px; }
   .usp-strip__row { gap: 14px 22px; }
   .usp { font-size: 12px; }
   .steps { flex-direction: column; align-items: center; gap: 32px; }

@@ -5,9 +5,9 @@
 var WHATSAPP_NUMBER = SITE.whatsappNumber;
 
 var NAV_LINKS = [
-  { href: '#best-sellers', label: 'Best Sellers' },
-  { href: '#products',     label: 'Products' },
-  { href: '#reviews',      label: 'Reviews' },
+  { href: '#best-sellers', label: 'Best Sellers', accent: true },
+  { href: '#products',     label: 'Soaps',     cat: 'soap' },
+  { href: '#products',     label: 'Household', cat: 'household' },
   { href: '#our-story',    label: 'Our Story' },
   { href: '#contact',      label: 'Contact' },
 ];
@@ -23,7 +23,10 @@ var ICONS = {
 
 function buildNavbar() {
   var links = NAV_LINKS.map(function (link) {
-    return '<a href="' + link.href + '">' + link.label + '</a>';
+    return '<a href="' + link.href + '"' +
+           (link.cat ? ' data-cat="' + link.cat + '"' : '') +
+           (link.accent ? ' class="nav-accent"' : '') +
+           '>' + link.label + '</a>';
   }).join('');
 
   return [
