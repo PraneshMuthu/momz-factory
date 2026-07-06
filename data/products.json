@@ -34,7 +34,7 @@
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.6,
       "ratingCount": 21
     },
     {
@@ -51,7 +51,7 @@
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap",
-      "rating": 4.8,
+      "rating": 4.7,
       "ratingCount": 17
     },
     {
@@ -67,7 +67,7 @@
       "inStock": true,
       "weight": "100g",
       "type": "Handmade Soap",
-      "rating": 4.6,
+      "rating": 4.9,
       "ratingCount": 14,
       "bestSeller": true
     },
@@ -84,7 +84,7 @@
       "inStock": false,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.5,
       "ratingCount": 11
     },
     {
@@ -100,7 +100,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.8,
+      "rating": 4.7,
       "ratingCount": 29
     },
     {
@@ -116,7 +116,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.6,
       "ratingCount": 19
     },
     {
@@ -132,7 +132,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.6,
+      "rating": 4.5,
       "ratingCount": 16
     },
     {
@@ -148,7 +148,7 @@
       "inStock": false,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.5,
       "ratingCount": 13
     },
     {
@@ -164,7 +164,7 @@
       "inStock": false,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.8,
+      "rating": 4.6,
       "ratingCount": 22
     },
     {
@@ -180,7 +180,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.6,
+      "rating": 4.5,
       "ratingCount": 12
     },
     {
@@ -197,7 +197,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.9,
+      "rating": 4.7,
       "ratingCount": 9
     },
     {
@@ -214,7 +214,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.5,
       "ratingCount": 8
     },
     {
@@ -231,7 +231,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.8,
+      "rating": 4.6,
       "ratingCount": 10
     },
     {
@@ -248,7 +248,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.6,
       "ratingCount": 7
     },
     {
@@ -265,7 +265,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.6,
+      "rating": 4.4,
       "ratingCount": 9
     },
     {
@@ -282,7 +282,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.8,
+      "rating": 4.6,
       "ratingCount": 11
     },
     {
@@ -299,7 +299,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.7,
+      "rating": 4.5,
       "ratingCount": 6
     },
     {
@@ -316,7 +316,7 @@
       "inStock": true,
       "weight": "800g",
       "type": "Handmade Soap",
-      "rating": 4.9,
+      "rating": 4.7,
       "ratingCount": 15
     },
     {
@@ -332,7 +332,7 @@
       "inStock": true,
       "weight": "500ml",
       "type": "Liquid Detergent",
-      "rating": 4.8,
+      "rating": 4.7,
       "ratingCount": 26
     },
     {
@@ -345,7 +345,7 @@
       "benefit": "Powerful stain removal and bright whites with a fresh fragrance — gentle on fabrics.",
       "mrp": 400,
       "price": 199,
-      "rating": 4.9,
+      "rating": 4.6,
       "ratingCount": 5,
       "isNew": true,
       "inStock": true,
