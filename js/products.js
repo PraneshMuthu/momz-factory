@@ -23,6 +23,34 @@ function ratingRow(product) {
          stars + '<span class="product-card__rating-num">' + product.rating.toFixed(1) + '</span></div>';
 }
 
+/* The card's action: "+ Add" normally, a − qty + stepper once the
+   product is in the cart, so each tap visibly counts up */
+function cardControlHtml(product) {
+  if (product.inStock === false) {
+    return '<button class="add-to-cart-btn" disabled>Unavailable</button>';
+  }
+  var entry = (typeof CART_STATE !== 'undefined') ? CART_STATE.items[product.id] : null;
+  if (entry) {
+    return '<div class="qty-stepper" data-product-id="' + product.id + '">' +
+           '<button class="qty-stepper__btn" data-step="minus" aria-label="Remove one">−</button>' +
+           '<span class="qty-stepper__count">' + entry.qty + '</span>' +
+           '<button class="qty-stepper__btn" data-step="plus" aria-label="Add one">+</button>' +
+           '</div>';
+  }
+  return '<button class="add-to-cart-btn" data-product-id="' + product.id + '">+ Add</button>';
+}
+
+function syncCardControls() {
+  document.querySelectorAll('.product-card[data-id]').forEach(function (card) {
+    var product = PRODUCTS.find(function (p) { return p.id === card.dataset.id; });
+    if (!product) return;
+    var control = card.querySelector('.add-to-cart-btn, .qty-stepper');
+    if (control) control.outerHTML = cardControlHtml(product);
+  });
+}
+
+window.addEventListener('momz:cartchange', syncCardControls);
+
 function renderCard(product, delay) {
   var swatchBg = 'rgba(' + hexToRgb(product.color) + ', 0.10)';
   var oos = product.inStock === false;
@@ -43,12 +71,10 @@ function renderCard(product, delay) {
     ? '<div><span class="product-card__mrp">&#8377;' + product.mrp + '</span><span class="product-card__sale">&#8377;' + product.price + '</span></div>'
     : '<span class="product-card__sale">&#8377;' + product.price + '</span>';
 
-  var buttonHtml = oos
-    ? '<button class="add-to-cart-btn" disabled>Unavailable</button>'
-    : '<button class="add-to-cart-btn" data-product-id="' + product.id + '">+ Add</button>';
+  var buttonHtml = cardControlHtml(product);
 
   return [
-    '<div class="product-card' + (oos ? ' product-card--oos' : '') + '" data-category="' + product.category + '"',
+    '<div class="product-card' + (oos ? ' product-card--oos' : '') + '" data-category="' + product.category + '" data-id="' + product.id + '"',
     '     data-animate data-animate-delay="' + delay + '">',
     '  <div class="product-card__img" style="background:' + swatchBg + ';">',
     '    ' + badge,
@@ -107,20 +133,28 @@ function renderGrid(products, gridId) {
     return renderCard(p, i * 80);
   }).join('');
 
-  grid.querySelectorAll('.add-to-cart-btn[data-product-id]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var id = btn.dataset.productId;
-      var product = PRODUCTS.find(function (p) { return p.id === id; });
-      if (!product || product.inStock === false) return;
-      Cart.add(product);
-      btn.classList.add('added');
-      btn.textContent = '✓ Added';
-      setTimeout(function () {
-        btn.classList.remove('added');
-        btn.textContent = '+ Add';
-      }, 1200);
+  /* Delegated so controls keep working after being swapped to steppers */
+  if (!grid.dataset.cartBound) {
+    grid.dataset.cartBound = '1';
+    grid.addEventListener('click', function (e) {
+      var addBtn = e.target.closest('.add-to-cart-btn[data-product-id]');
+      if (addBtn) {
+        var product = PRODUCTS.find(function (p) { return p.id === addBtn.dataset.productId; });
+        if (product && product.inStock !== false) Cart.add(product);
+        return;
+      }
+      var stepBtn = e.target.closest('.qty-stepper__btn');
+      if (stepBtn) {
+        var id = stepBtn.closest('.qty-stepper').dataset.productId;
+        if (stepBtn.dataset.step === 'plus') {
+          var p = PRODUCTS.find(function (x) { return x.id === id; });
+          if (p) Cart.add(p);
+        } else {
+          Cart.remove(id);
+        }
+      }
     });
-  });
+  }
 
   if (typeof window.observeAnimations === 'function') {
     window.observeAnimations(grid);

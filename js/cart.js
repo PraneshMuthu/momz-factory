@@ -157,6 +157,9 @@ var Cart = {
 
     var panel = document.getElementById('cart-panel');
     if (panel && panel.classList.contains('open')) Cart._renderPanel();
+
+    /* let product cards swap their Add button / qty stepper */
+    try { window.dispatchEvent(new CustomEvent('momz:cartchange')); } catch (e) {}
   },
 
   _renderPanel: function () {
