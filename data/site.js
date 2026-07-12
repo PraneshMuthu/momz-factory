@@ -15,7 +15,7 @@ var SITE = {
 
   /* Shown in the footer */
   addressLines: [
-    '1/174 Thattan thottam, Rayarpalayam,',
-    'Karumathampatti, Coimbatore - 641649'
+    'D.No: 3/356 Thattampudur,',
+    'Kaniyur, Coimbatore - 641659'
   ]
 };
